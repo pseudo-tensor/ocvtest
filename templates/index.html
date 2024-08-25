@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera Feed</title>
     <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
 </head>
+
 <body class="bg-neutral-200">
-  <div class="flex justify-between px-2 mb-2 h-auto border-b-2 border-neutral-400"> 
-    <div class="flex justify-between">
-      <button class="focus:outline-none font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">ISL Translate</button>
-      <div class="font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">Home</div>
-      <div class="font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">About</div>
-      <div class="font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">Language</div>
-    </div>
-    <div>
-      <button class="focus:outline-none font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">History</button>
-    </div>
-  </div>
-<div class="grid grid-cols-2 w-auto m-10">
-    <div class=" flex justify-center">
-      <div>
-        <p class="text-3xl font-medium p-4">Live Gooner Reaction</p>
-        <img class="rounded" src="{{ url_for('video_feed') }}" width="640" height="480" />
-      </div>
-    </div>
-    <div class=" flex justify-center">
-      <div>
-        <p class="text-3xl font-medium p-4">Unnecessary Yap</p>
-        <textarea readonly rows="14" cols="48" wrap = "hard" class="rounded p-4 font-mono text-2xl bg-zinc-100">funny text </textarea>
-        <div class="flex justify-evenly text-2xl m-4">
-          <div>
-            <button class="border-2 border-neutral-400 px-4 py-2 mx-2 rounded"> + </button>
-            <button class="border-2 border-neutral-400 px-4 py-2 mx-2 rounded"> - </button>
-          </div>
+    <div class="flex justify-between px-2 mb-2 h-auto border-b-2 border-neutral-400">
+        <div class="flex justify-between">
+            <button
+                class="focus:outline-none font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">ISL
+                Translate</button>
+            <div
+                class="font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">
+                Home</div>
+            <div
+                class="font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">
+                About</div>
+            <div
+                class="font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">
+                Language</div>
         </div>
-      </div>
+        <div>
+            <button
+                class="focus:outline-none font-body text-neutral-800 text-l p-4 py-6 font-bold tracking-wide hover:bg-teal-600 hover:text-white cursor-pointer">History</button>
+        </div>
     </div>
-</div>
+    <div class="grid grid-cols-2 w-auto m-10">
+        <div class=" flex justify-center">
+            <div>
+                <p class="text-3xl font-medium p-4">Live Gooner Reaction</p>
+                <img class="rounded" src="{{ url_for('video_feed') }}" width="640" height="480" />
+            </div>
+        </div>
+        <div class=" flex justify-center">
+            <div>
+                <p class="text-3xl font-medium p-4">Unnecessary Yap</p>
+                <textarea readonly rows="14" cols="48" wrap="hard" class="rounded p-4 font-mono text-2xl bg-zinc-100">
+                    {{ data }}
+                </textarea>
+                <div class="flex justify-evenly text-2xl m-4">
+                    <div>
+                        <button class="border-2 border-neutral-400 px-4 py-2 mx-2 rounded"> + </button>
+                        <button class="border-2 border-neutral-400 px-4 py-2 mx-2 rounded"> - </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
